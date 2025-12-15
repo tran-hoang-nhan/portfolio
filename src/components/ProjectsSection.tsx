@@ -11,6 +11,8 @@ interface Project {
   videoUrl: string;
   features: string[];
   duration: string;
+  github: string;
+  liveDemo: string;
 }
 
 export function ProjectsSection() {
@@ -40,8 +42,14 @@ export function ProjectsSection() {
       techLogos: ['ReactJS', 'MongoDB', 'Docker'],
       color: 'from-purple-600 to-pink-600',
       videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
-      features: ['Real-time inventory updates', 'Payment gateway integration', 'User authentication'],
-      duration: '9/2025 - 12/2025'
+      features: [
+        'Architected and developed a RESTful API backend using Express.js with MongoDB for data persistence.', 
+        'Implemented JWT-based authentication, inventory management system tracking stock by color and size variants, and VNPay payment gateway integration.', 
+        'Using Redis for caching cart operations.',
+        'Implemented secure API endpoints with role-based access control (User, Admin), input validation, and error handling.'],
+      duration: '9/2025 - 12/2025',
+      github: 'https://github.com/tran-hoang-nhan/GENZ_HELMET_SHOP_WEB',
+      liveDemo: ''
     },
     {
       title: 'Music Player App',
@@ -50,8 +58,14 @@ export function ProjectsSection() {
       techLogos: ['Flutter', 'Dart', 'Firebase'],
       color: 'from-blue-600 to-cyan-600',
       videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
-      features: ['3D models', 'Interactive animations', 'Responsive design'],
-      duration: '9/2025 - 12/2025'
+      features: [
+        'Developed a cross-platform music streaming application using Flutter with Firebase backend. ', 
+        'Implementing real-time data synchronization, offline capabilities, and smart recommendation engine.', 
+        'Integrated Jamendo API for 30,000+ tracks, and deployed advanced features including smart search algorithms, playlist management, and background audio playback.',
+        'Optimized performance with caching strategies, lazy loading, and efficient data handling, delivering production-ready mobile application supporting Android, iOS, and Web platforms with Material Design 3 UI.'],
+      duration: '9/2025 - 12/2025',
+      github: 'https://github.com/tran-hoang-nhan/Music-App',
+      liveDemo: ''
     },
     {
       title: 'Workout & Fitness App',
@@ -60,8 +74,10 @@ export function ProjectsSection() {
       techLogos: ['Flutter', 'Supabase', 'PostgreSQL'],
       color: 'from-orange-600 to-red-600',
       videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
-      features: ['Workout tracking', 'Nutrition plans', 'Social features'],
-      duration: 'Ongoing'
+      features: ['Still working on more features...'],
+      duration: 'Ongoing',
+      github: 'https://github.com/tran-hoang-nhan/workout_app',
+      liveDemo: ''
     },
     {
       title: 'Blog Music App',
@@ -71,8 +87,10 @@ export function ProjectsSection() {
       color: 'from-green-600 to-teal-600',
       videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
       features: ['Real-time collaboration', 'Task prioritization', 'User roles'],
-      duration: '4/2025 - 7/2025'
-    },
+      duration: '4/2025 - 7/2025',
+      github: 'http://github.com/tran-hoang-nhan/Blog-Music-App',
+      liveDemo: ''
+    },  
   ];
 
   return (
@@ -356,22 +374,32 @@ export function ProjectsSection() {
 
                       {/* Action Buttons */}
                       <div className="flex gap-4">
-                        <motion.button
-                          className="flex-1 flex items-center justify-center gap-3 px-6 py-4 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 rounded-lg transition-all text-lg shadow-lg"
-                          whileHover={{ scale: 1.05 }}
-                          whileTap={{ scale: 0.95 }}
-                        >
-                          <ExternalLink size={20} />
-                          Live Demo
-                        </motion.button>
-                        <motion.button
-                          className="flex-1 flex items-center justify-center gap-3 px-6 py-4 bg-gray-700 hover:bg-gray-600 rounded-lg transition-all text-lg shadow-lg"
-                          whileHover={{ scale: 1.05 }}
-                          whileTap={{ scale: 0.95 }}
-                        >
-                          <Github size={20} />
-                          Source Code
-                        </motion.button>
+                        {selectedProject.liveDemo && (
+                          <motion.a
+                            href={selectedProject.liveDemo}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex-1 flex items-center justify-center gap-3 px-6 py-4 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 rounded-lg transition-all text-lg shadow-lg"
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                          >
+                            <ExternalLink size={20} />
+                            Live Demo
+                          </motion.a>
+                        )}
+                        {selectedProject.github && (
+                          <motion.a
+                            href={selectedProject.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex-1 flex items-center justify-center gap-3 px-6 py-4 bg-gray-700 hover:bg-gray-600 rounded-lg transition-all text-lg shadow-lg"
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                          >
+                            <Github size={20} />
+                            Source Code
+                          </motion.a>
+                        )}
                       </div>
                     </div>
 

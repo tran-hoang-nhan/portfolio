@@ -171,8 +171,8 @@ export function TicketSection() {
 
                   {/* Artist Name */}
                   <div className="text-white text-center">
-                    <p className="text-sm uppercase tracking-wider font-semibold">YOUR NAME</p>
-                    <p className="text-xs text-white/70 mt-1">Full Stack Developer</p>
+                    <p className="text-sm uppercase tracking-wider font-semibold">Trần Hoàng Nhân</p>
+                    <p className="text-xs text-white/70 mt-1">Backend Developer</p>
                   </div>
                 </motion.div>
               </div>
