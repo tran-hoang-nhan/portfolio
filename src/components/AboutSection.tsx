@@ -52,7 +52,7 @@ export function AboutSection() {
       icon: <Music size={32} />, 
       title: 'Track 03: Projects & Problem Solving',
       subtitle: 'The Rhythm of Code',
-      description: 'I view coding like composing music: it needs structure, rhythm, and harmony. Experience in building Music Management Systems has taught me how to handle complex logic and state management.',
+      description: 'I view coding like composing music: it needs structure, rhythm, and harmony. Experience in building Music Management Systems and E-Commerce Websites has taught me how to handle complex logic and state management.',
       skills: ['State Management', 'Logic Building', 'CI/CD Pipelines', 'Debugging'],
       color: 'from-yellow-500 to-red-500',
     },
